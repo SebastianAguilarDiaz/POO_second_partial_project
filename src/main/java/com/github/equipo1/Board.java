@@ -26,6 +26,8 @@ public class Board {
                 upwardsCards[i][j]=false;
             }
         }
+
+
     }
 
 
@@ -46,6 +48,18 @@ public class Board {
         
     }
 
+    // recives a number from 1 to 10 and flips that card
+    public void flipCard(int num){
+        num--;
+        
+        // if the card is already upwards it would be backwards so the number of upwards cards decreases by one
+        if(upwardsCards[num/5][num%5]) this.numOfUpwardsCards--;
+        else this.numOfUpwardsCards++;
+
+
+        this.upwardsCards[num/5][num%5] = !this.upwardsCards[num/5][num%5];
+
+    }
 
 
 
