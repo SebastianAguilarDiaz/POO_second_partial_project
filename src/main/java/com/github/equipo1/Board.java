@@ -1,4 +1,4 @@
-package com.github.sebastianaguilardiaz;
+package com.github.equipo1;
 
 
 public class Board {
@@ -18,7 +18,7 @@ public class Board {
 
     public Board(Card m[][]){
 
-        
+
         for(int i=0;i<Board.height;i++){
             for(int j=0;j<Board.width;j++){
                 matrix[i][j]=m[i][j];

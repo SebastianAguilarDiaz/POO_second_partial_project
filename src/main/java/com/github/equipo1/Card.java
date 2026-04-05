@@ -1,4 +1,4 @@
-package com.github.sebastianaguilardiaz;
+package com.github.equipo1;
 
 public class Card {
     // card dimensions
