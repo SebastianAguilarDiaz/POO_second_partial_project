@@ -15,12 +15,12 @@ public class AdultPlayer extends Player{
     public void printMotivationalPhrase(){
         this.failedAttempts++;
         
-        if(this.failedAttempts>1) System.out.println("Sigue intentando");
+        if(this.failedAttempts>1) System.out.println("Sigue intentando "+this.getName());
     }
 
     @Override
     public void printCongratsPhrase(){
-        System.out.println("Felicidades");
+        System.out.println("Felicidades "+ this.getName());
     }
 
     // adds points to the player score when he succeeded

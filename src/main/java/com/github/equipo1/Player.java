@@ -13,11 +13,11 @@ public abstract class Player {
 
     public Player(Scanner sc){
         // obtains the name of the player
-        System.out.print("Please, enter the name of the player: ");
+        System.out.print("Por favor, ingresa el nombre del jugador: ");
         this.setName(sc.nextLine());
 
         // obtains the age of the player
-        System.out.print("Please, enter the age of the player: ");
+        System.out.print("Por favor, ingresa la edad del jugador: ");
         this.setAge(sc.nextInt());;
         
         // cleans the buffer
@@ -87,10 +87,10 @@ public abstract class Player {
 
     // prints the info of the player 
     public void printData(){
-        System.out.println("Name: "+this.getName());
-        System.out.println("Age: "+this.getAge());
-        System.out.println("Points: "+this.getPoints());
-        System.out.println("Games played: "+this.getGamesPlayed());
+        System.out.println("Nombre: "+this.getName());
+        System.out.println("Edad: "+this.getAge());
+        System.out.println("Puntos: "+this.getPoints());
+        System.out.println("Juegos jugados: "+this.getGamesPlayed());
         
     }
 }

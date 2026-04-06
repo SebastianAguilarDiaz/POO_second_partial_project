@@ -58,7 +58,7 @@ public class Board {
         return (this.upwardsCards[num/5][num%5])?true:false;
     }
 
-    // returns the of both cards are the same
+    // returns true if both cards are the same
     public boolean compareCards(int num1, int num2){
         num1--;
         num2--;

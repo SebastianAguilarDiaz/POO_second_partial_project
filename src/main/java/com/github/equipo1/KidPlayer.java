@@ -13,7 +13,7 @@ public class KidPlayer extends Player{
     @Override
     public void printMotivationalPhrase(){
 
-        System.out.println("No te preocupes por no haber encontrado la pareja en este turno porque estas haciendo un trabajo realmente increible y estoy completamente seguro de que en el siguiente intento recordaras perfectamente donde estan todas las cartas para ganar el juego");
+        System.out.println(this.getName() + ", no te preocupes por no haber encontrado la pareja en este turno porque estas haciendo un trabajo realmente increible y estoy completamente seguro de que en el siguiente intento recordaras perfectamente donde estan todas las cartas para ganar el juego");
     
     }
 
@@ -21,7 +21,7 @@ public class KidPlayer extends Player{
     @Override
     public void printCongratsPhrase(){
 
-        System.out.println("Felicidades tienes una memoria realmente asombrosa y envidiable porque acabas de encontrar una pareja de cartas demostrando que pusiste muchisima atencion a cada uno de los movimientos en el tablero de juego sigue asi para ser el mejor jugador");
+        System.out.println("Felicidades " + this.getName() + ", tienes una memoria realmente asombrosa y envidiable porque acabas de encontrar una pareja de cartas demostrando que pusiste muchisima atencion a cada uno de los movimientos en el tablero de juego sigue asi para ser el mejor jugador");
     
     }
 

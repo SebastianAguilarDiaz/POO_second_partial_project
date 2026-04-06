@@ -1,27 +1,80 @@
 package com.github.equipo1;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Turn {
 
     private Player player;
     private Board board;
     private Scanner sc;
+    public boolean succeed=false;
 
 
-    public Turn(Player player, Board board, Scanner sc) {
-        this.player = player;
-        this.board = board;
-        this.sc = sc;
+    public Turn(Player p, Board b, Scanner s) {
+        this.player = p;
+        this.board = b;
+        this.sc = s;
+        
+
+        int card1=flipCard();
+        int card2=flipCard();
+
+        // if the player succeed the cards must remain upwards and the player must earn some points
+        if (board.compareCards(card1, card2)){
+            this.player.addPoints(card2);
+            this.player.printCongratsPhrase();
+            this.succeed=true;
+        }
+
+
+        // else the cards must return to their previous status an also the board
+        else{
+            // waits to seconds if the guess is incorrect
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            
+            
+            this.player.printMotivationalPhrase();
+            board.flipCard(card1);
+            board.flipCard(card2);
+            Board.clearScreen();
+            board.printBoard();
+        }
 
 
     }
 
-    private void flipCard(int n){
+    private int flipCard(){
 
-        this.board.flipCard(n);
+
+        System.out.println("Jugador "+ this.player.getName()+ ", selecciona una carta para voltear ");
+        int card=this.sc.nextInt();
+        
+        // if the card is already upwards
+        while(this.board.getCardStatus(card)){
+            System.out.println("Selecciona una carta valida ");
+            card=this.sc.nextInt();
+            
+            // cleans the buffer
+            this.sc.nextLine();
+
+
+
+        }
+        
+
+        // flips the card cleans the screen and then prints the board
+        board.flipCard(card);
         Board.clearScreen();
-        this.board.printBoard();
+        board.printBoard();
+        
+
+        return card;
 
     }
 }
