@@ -1,5 +1,7 @@
 package com.github.equipo1;
 
+import java.util.Random;
+
 public class Card {
     // card dimensions
     public  static final int  width=8;
@@ -16,7 +18,8 @@ public class Card {
     // word that the card will have asigned
     private String word;
 
-
+    private static Random rand= new Random();
+    
 
     
     public Card(String w){
@@ -48,7 +51,7 @@ public class Card {
     }
 
     public static void setBackFigure(int fig){
-        
+        char randChar=(char)(rand.nextInt(26)+0x41);
         switch(fig){
             
             // square
@@ -56,7 +59,8 @@ public class Card {
                 for(int i=0;i<Card.height;i++){
                     for(int j=0;j<Card.width;j++){
                         // the first parentesis makes the big square and the second the small one
-                        if((i>1 && i<6 && j>1 && j<6) && !(i>2 && i<5 && j>2 && j<5)) Card.back[i][j]='x';
+
+                        if((i>1 && i<6 && j>1 && j<6) && !(i>2 && i<5 && j>2 && j<5)) Card.back[i][j]=randChar;
                         else Card.back[i][j]='0';
                     }
                 }

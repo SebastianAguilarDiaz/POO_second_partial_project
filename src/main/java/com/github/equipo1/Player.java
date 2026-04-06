@@ -6,7 +6,7 @@ import java.util.Scanner;
 public abstract class Player {
     
     private String name;
-    private int points=0;
+    protected int points=0;
     private int age;
     private int gamesPlayed=0;
 
@@ -61,8 +61,8 @@ public abstract class Player {
     }
     
     // adds points to the player when he succeeded
-    public void addPoints(int num){
-        this.points+=num;
+    public void addPoints(){
+        this.points+=2;
     }
 
 

@@ -39,11 +39,12 @@ public class Board {
 
                         // if the card is upwards it prints its front face else, prints the back face
                         if (upwardsCards[row][column]) System.out.print(this.matrix[row][column].front[cardRow][cardColumn]);
-                        else System.out.println(Card.back[cardRow][cardColumn]);
+                        else System.out.print(Card.back[cardRow][cardColumn]);
                     }
-                    System.out.print(' ');
+                    System.out.print('\t');
                     
                 }
+                System.out.println();
             }
             System.out.println();
         }

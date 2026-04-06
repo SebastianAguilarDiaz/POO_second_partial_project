@@ -18,7 +18,9 @@ public class Game {
         int pairsPerPlayer[]= new int [2];
         pairsPerPlayer[0]=0;
         pairsPerPlayer[1]=0;
+        
 
+        board.printBoard();
         // it iterates the player and ends only when the number of cards upwards its 10
         for(int i=0;i<2 && board.numOfUpwardsCards<10;i++){
             Turn actualTurn= new Turn(players[i],board,this.sc);

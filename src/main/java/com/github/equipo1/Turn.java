@@ -22,14 +22,15 @@ public class Turn {
 
         // if the player succeed the cards must remain upwards and the player must earn some points
         if (board.compareCards(card1, card2)){
-            this.player.addPoints(card2);
+            this.player.addPoints();
             this.player.printCongratsPhrase();
             this.succeed=true;
         }
 
-
+        
         // else the cards must return to their previous status an also the board
         else{
+            this.player.printMotivationalPhrase();
             // waits to seconds if the guess is incorrect
             try {
                 TimeUnit.SECONDS.sleep(2);
@@ -39,7 +40,7 @@ public class Turn {
 
             
             
-            this.player.printMotivationalPhrase();
+            
             board.flipCard(card1);
             board.flipCard(card2);
             Board.clearScreen();

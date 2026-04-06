@@ -23,11 +23,12 @@ public class AdultPlayer extends Player{
         System.out.println("Felicidades "+ this.getName());
     }
 
-    // adds points to the player score when he succeeded
-    public void addPoints() {
+    @Override
+    public void addGamePlayed(){
+        super.addGamePlayed();
         this.failedAttempts=0;
-        super.addPoints(2);
     }
+
 
 
 }

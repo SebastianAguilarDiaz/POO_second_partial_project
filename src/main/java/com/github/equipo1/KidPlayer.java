@@ -28,8 +28,9 @@ public class KidPlayer extends Player{
     }
 
     // adds point to the player score when he succeeded
+    @Override
     public void addPoints() {
-        super.addPoints(4);
+        this.points+=4;
     }
 
 }
