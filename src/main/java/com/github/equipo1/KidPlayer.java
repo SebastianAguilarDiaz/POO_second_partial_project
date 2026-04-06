@@ -1,26 +1,33 @@
 package com.github.equipo1;
 
-public class KidPlayer implements Player{
+import java.util.Scanner;
 
-    int points = 0;
+public class KidPlayer extends Player{
 
+    KidPlayer(Scanner sc){
+        super(sc);
+
+    }
+
+    // prints the motivational phrase in case that the player failed
     @Override
     public void printMotivationalPhrase(){
-        System.out.println("No te preocupes! Cada vez que volteas una carta, tu cerebro guarda un mapa secreto de donde estan escondidas. Lo estas haciendo increible y veras que en el proximo turno estaras mucho mas cerca de encontrar el par! Sigue intentandolo, campeon");
-    }
+
+        System.out.println("No te preocupes por no haber encontrado la pareja en este turno porque estas haciendo un trabajo realmente increible y estoy completamente seguro de que en el siguiente intento recordaras perfectamente donde estan todas las cartas para ganar el juego");
     
-    @Override
-    public void printCongratsPhrase(){
-        System.out.println("Felicidades! Tienes una memoria increible y acabas de encontrar un par. Tu cerebro esta trabajando a toda maquina y lo estas haciendo como todo un experto. Sigue adelante porque vas por muy buen camino para ganar el juego!");
     }
 
+    // prints the congrats phrase in case that the player succeeded
     @Override
-    public void addPoints(){
-        points += 4;
-    }
+    public void printCongratsPhrase(){
+
+        System.out.println("Felicidades tienes una memoria realmente asombrosa y envidiable porque acabas de encontrar una pareja de cartas demostrando que pusiste muchisima atencion a cada uno de los movimientos en el tablero de juego sigue asi para ser el mejor jugador");
     
-    @Override
-    public int getPoints(){
-        return points;
     }
+
+    // adds point to the player score when he succeeded
+    public void addPoints() {
+        super.addPoints(4);
+    }
+
 }

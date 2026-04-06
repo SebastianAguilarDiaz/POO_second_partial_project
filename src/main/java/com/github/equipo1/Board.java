@@ -58,6 +58,14 @@ public class Board {
         return (this.upwardsCards[num/5][num%5])?true:false;
     }
 
+    // returns the of both cards are the same
+    public boolean compareCards(int num1, int num2){
+        num1--;
+        num2--;
+        return Card.compare(this.matrix[num1/5][num1%5], this.matrix[num2/5][num2%5]);
+
+     }
+
     // recives a number from 1 to 10 and flips that card
     public void flipCard(int num){
         
@@ -70,6 +78,11 @@ public class Board {
 
         this.upwardsCards[num/5][num%5] = !this.upwardsCards[num/5][num%5];
 
+    }
+
+    // clears the screen
+    public static void clearScreen(){
+    
     }
 
 
