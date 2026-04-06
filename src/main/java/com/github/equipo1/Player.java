@@ -6,22 +6,18 @@ import java.util.Scanner;
 public abstract class Player {
     
     private String name;
-    private int points;
+    private int points=0;
     private int age;
-    private int gamesPlayed;
+    private int gamesPlayed=0;
 
 
-    public Player(Scanner sc){
-        // obtains the name of the player
-        System.out.print("Por favor, ingresa el nombre del jugador: ");
-        this.setName(sc.nextLine());
+    public Player(Scanner sc, String n, int a){
 
-        // obtains the age of the player
-        System.out.print("Por favor, ingresa la edad del jugador: ");
-        this.setAge(sc.nextInt());;
+        this.setName(n);
+
+        this.setAge(a);;
         
-        // cleans the buffer
-        sc.nextLine();
+
         
         this.points=0;
 

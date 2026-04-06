@@ -6,8 +6,8 @@ public class AdultPlayer extends Player{
 
     private int failedAttempts=0;
 
-    AdultPlayer(Scanner sc){
-        super(sc);
+    AdultPlayer(Scanner sc, String n, int a){
+        super(sc,n,a);
     
     }
 

@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class KidPlayer extends Player{
 
-    KidPlayer(Scanner sc){
-        super(sc);
+    public KidPlayer(Scanner sc, String n, int a){
+        super(sc,n,a);
 
     }
+
+
 
     // prints the motivational phrase in case that the player failed
     @Override
