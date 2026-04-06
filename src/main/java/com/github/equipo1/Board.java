@@ -41,21 +41,32 @@ public class Board {
                         if (upwardsCards[row][column]) System.out.print(this.matrix[row][column].front[cardRow][cardColumn]);
                         else System.out.println(Card.back[cardRow][cardColumn]);
                     }
+                    System.out.print(' ');
                     
                 }
             }
+            System.out.println();
         }
+        System.out.println();
+        System.out.println();
         
+    }
+
+    // returns true if the card is upwards
+    public boolean getCardStatus(int num){
+        num--;
+        return (this.upwardsCards[num/5][num%5])?true:false;
     }
 
     // recives a number from 1 to 10 and flips that card
     public void flipCard(int num){
-        num--;
+        
         
         // if the card is already upwards it would be backwards so the number of upwards cards decreases by one
-        if(upwardsCards[num/5][num%5]) this.numOfUpwardsCards--;
+        if(this.getCardStatus(num)) this.numOfUpwardsCards--;
         else this.numOfUpwardsCards++;
-
+        
+        num--;
 
         this.upwardsCards[num/5][num%5] = !this.upwardsCards[num/5][num%5];
 
