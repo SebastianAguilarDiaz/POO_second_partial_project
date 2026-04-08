@@ -7,6 +7,7 @@ public class CardsGame {
     private static final int NUM_OF_PLAYERS=5;
     private Scanner sc;
     private Player players[]= new Player[CardsGame.NUM_OF_PLAYERS];
+    private int gamesPlayed=0;
 
     CardsGame(Scanner s){
         this.sc=s;
@@ -74,7 +75,7 @@ public class CardsGame {
 
         Game actualGame= new Game(gamePlayers,this.sc);
 
-
+        gamesPlayed++;
         
 
 
@@ -94,6 +95,10 @@ public class CardsGame {
         this.sc.nextLine();
 
         Card.setBackFigure(fig);
+    }
+
+    public void printGamesPlayed(){
+        System.out.println("Se han jugado "+this.gamesPlayed+ " juegos");
     }
 
     private void initialConfig(){

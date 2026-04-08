@@ -48,7 +48,8 @@ public class AppMenu {
         }
         System.out.println();
         actualCardsGame.printPlayersData();
-
+        System.out.println();
+        actualCardsGame.printGamesPlayed();
 
         sc.close();
 
