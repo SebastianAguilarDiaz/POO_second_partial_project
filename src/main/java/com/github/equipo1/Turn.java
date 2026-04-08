@@ -5,32 +5,31 @@ import java.util.concurrent.TimeUnit;
 
 public class Turn {
 
-    private Player player;
     private Board board;
     private Scanner sc;
     public boolean succeed=false;
 
 
     public Turn(Player p, Board b, Scanner s) {
-        this.player = p;
+    
         this.board = b;
         this.sc = s;
         
 
-        int card1=flipCard();
-        int card2=flipCard();
+        int card1=this.flipCard(p);
+        int card2=this.flipCard(p);
 
         // if the player succeed the cards must remain upwards and the player must earn some points
         if (board.compareCards(card1, card2)){
-            this.player.addPoints();
-            this.player.printCongratsPhrase();
+            p.addPoints();
+            p.printCongratsPhrase();
             this.succeed=true;
         }
 
         
         // else the cards must return to their previous status an also the board
         else{
-            this.player.printMotivationalPhrase();
+            p.printMotivationalPhrase();
             // waits to seconds if the guess is incorrect
             try {
                 TimeUnit.SECONDS.sleep(2);
@@ -43,6 +42,7 @@ public class Turn {
             
             board.flipCard(card1);
             board.flipCard(card2);
+            
             Board.clearScreen();
             board.printBoard();
         }
@@ -50,10 +50,10 @@ public class Turn {
 
     }
 
-    private int flipCard(){
+    private int flipCard(Player player){
 
 
-        System.out.println("Jugador "+ this.player.getName()+ ", selecciona una carta para voltear ");
+        System.out.println("Jugador "+ player.getName()+ ", selecciona una carta para voltear ");
         int card=this.sc.nextInt();
         
         // if the card is already upwards

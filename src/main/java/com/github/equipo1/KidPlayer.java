@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class KidPlayer extends Player{
 
-    public KidPlayer(Scanner sc, String n, int a){
-        super(sc,n,a);
-
+    public KidPlayer(Scanner sc, String name, int age){
+        super(sc,name,age);
+        this.setPointsPerCorrectGuess(4);
     }
 
 
@@ -27,10 +27,5 @@ public class KidPlayer extends Player{
     
     }
 
-    // adds point to the player score when he succeeded
-    @Override
-    public void addPoints() {
-        this.points+=4;
-    }
 
 }

@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class CardsGame {
 
-    private final int numOfPlayers=5;
+    private static final int NUM_OF_PLAYERS=5;
     private Scanner sc;
-    private Player players[]= new Player[numOfPlayers];
+    private Player players[]= new Player[NUM_OF_PLAYERS];
 
     CardsGame(Scanner s){
         this.sc=s;
         this.initialConfig();
     }
     public void registerPlayers(){
-        for(int i =0; i<numOfPlayers ; i++){
+        for(int i =0; i<NUM_OF_PLAYERS ; i++){
 
             System.out.println("Jugador "+ (i+1)+", ingresa tu nombre: ");
             String name = this.sc.nextLine();
@@ -31,8 +31,8 @@ public class CardsGame {
         }
     }
 
-    public void printPlayersNames(){
-        for(int i=0; i<numOfPlayers;i++){
+    private void printPlayersNames(){
+        for(int i=0; i<NUM_OF_PLAYERS;i++){
             System.out.print("Jugador " + (i+1) + ": ");
             System.out.println(this.players[i].getName());
         }
@@ -96,10 +96,10 @@ public class CardsGame {
         Card.setBackFigure(fig);
     }
 
-    public void initialConfig(){
+    private void initialConfig(){
         this.registerPlayers();
         System.out.println();
-        Card.setBackFigure(0);
+        Card.setBackFigure();
 
 
     }

@@ -6,8 +6,9 @@ public class AdultPlayer extends Player{
 
     private int failedAttempts=0;
 
-    AdultPlayer(Scanner sc, String n, int a){
-        super(sc,n,a);
+    AdultPlayer(Scanner sc, String name, int age){
+        super(sc,name,age);
+        this.setPointsPerCorrectGuess(2);
     
     }
 

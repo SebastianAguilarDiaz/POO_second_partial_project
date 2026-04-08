@@ -6,9 +6,10 @@ import java.util.Scanner;
 public abstract class Player {
     
     private String name;
-    protected int points=0;
+    private int points=0;
     private int age;
     private int gamesPlayed=0;
+    private int pointsPerCorrectGuess=2;
 
 
     public Player(Scanner sc, String n, int a){
@@ -34,8 +35,6 @@ public abstract class Player {
         this.age=a;
     }
 
-
-
     // sets the name of the player    
     public void setName(String n){
         this.name=n;
@@ -45,10 +44,6 @@ public abstract class Player {
     public String getName(){
         return this.name;
     }
-
-
-
-
 
     // prints the motivational phrase in case that the player failed 
     public void printMotivationalPhrase(){
@@ -60,9 +55,19 @@ public abstract class Player {
 
     }
     
+    // returns the points per correct guess
+    public int getPointsPerCorrectGuess(){
+        return this.pointsPerCorrectGuess;
+    }
+
+    // set the points for correct guess to x
+    protected void setPointsPerCorrectGuess( int x){
+        this.pointsPerCorrectGuess=x;
+    }
+    
     // adds points to the player when he succeeded
     public void addPoints(){
-        this.points+=2;
+        this.points+=this.pointsPerCorrectGuess;
     }
 
 
