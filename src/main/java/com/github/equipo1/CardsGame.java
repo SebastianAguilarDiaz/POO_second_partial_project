@@ -88,7 +88,13 @@ public class CardsGame {
         Card.printFiguresList();
         System.out.println();
 
-        System.out.println("Escoja la figura");
+        System.out.println("Lista de Figuras:");
+        System.out.println("0. Cuadrado");
+        System.out.println("1. Diagonal de 2 Cuadros");
+        System.out.println("2. X");
+        System.out.println("3. Cruz");
+        System.out.println("4. Diagonal de 3 Cuadros");
+        System.out.print("Escoja el indice de la figura: ");
         int fig=this.sc.nextInt();
 
         // cleans the buffer
