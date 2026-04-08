@@ -6,14 +6,14 @@ public class CardsGame {
 
     private static final int NUM_OF_PLAYERS=5;
     private Scanner sc;
-    private Player players[]= new Player[NUM_OF_PLAYERS];
+    private Player players[]= new Player[CardsGame.NUM_OF_PLAYERS];
 
     CardsGame(Scanner s){
         this.sc=s;
         this.initialConfig();
     }
     public void registerPlayers(){
-        for(int i =0; i<NUM_OF_PLAYERS ; i++){
+        for(int i =0; i<CardsGame.NUM_OF_PLAYERS ; i++){
 
             System.out.println("Jugador "+ (i+1)+", ingresa tu nombre: ");
             String name = this.sc.nextLine();
@@ -32,14 +32,14 @@ public class CardsGame {
     }
 
     private void printPlayersNames(){
-        for(int i=0; i<NUM_OF_PLAYERS;i++){
+        for(int i=0; i<CardsGame.NUM_OF_PLAYERS;i++){
             System.out.print("Jugador " + (i+1) + ": ");
             System.out.println(this.players[i].getName());
         }
     }
 
     public void printPlayersData(){
-        for(var n: players){
+        for(var n: this.players){
             n.printData();
             System.out.println();
         }

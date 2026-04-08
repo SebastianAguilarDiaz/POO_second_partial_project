@@ -41,7 +41,7 @@ public class Card {
             for(int j=0; j<Card.WIDTH;j++){
                 
                 // if we are a the bottom the character must be the one specified
-                if(i==Card.HEIGHT-1)     front[i][j]=FRONT_BOTTOM;
+                if(i==Card.HEIGHT-1)     front[i][j]=Card.FRONT_BOTTOM;
 
 
                 // else if we are on the spaces destinated for the word the characters must the word ones
@@ -101,7 +101,7 @@ public class Card {
 
     // if there's no argument the figure must be the square
     public static void setBackFigure(){
-        setBackFigure(0);
+        Card.setBackFigure(0);
     }
 
 

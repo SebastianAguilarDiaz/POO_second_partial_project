@@ -11,8 +11,8 @@ public class Game {
     
     private static final int NUM_OF_PLAYERS=2;
     
-    private int pointsPerPlayer[]= new int [NUM_OF_PLAYERS];
-    private Player players[]=new Player[NUM_OF_PLAYERS];
+    private int pointsPerPlayer[]= new int [Game.NUM_OF_PLAYERS];
+    private Player players[]=new Player[Game.NUM_OF_PLAYERS];
 
     public Game(Player players[], Scanner s){
         this.sc=s;
@@ -20,7 +20,7 @@ public class Game {
         Board board=new Board(Game.words);
 
         
-        for(int i=0;i<NUM_OF_PLAYERS;i++){
+        for(int i=0;i<Game.NUM_OF_PLAYERS;i++){
             this.players[i]=players[i];
             this.pointsPerPlayer[i]=0;
         }
@@ -34,10 +34,10 @@ public class Game {
             Turn actualTurn= new Turn(this.players[i],board,this.sc);
             
             // if the actual player succed on his turn, it means his guess had been correct
-            if(actualTurn.succeed)pointsPerPlayer[i]+=this.players[i].getPointsPerCorrectGuess();
+            if(actualTurn.succeed)this.pointsPerPlayer[i]+=this.players[i].getPointsPerCorrectGuess();
 
             // so it returns to be 0 after the i++
-            if(i==this.NUM_OF_PLAYERS-1) i=-1;
+            if(i==Game.NUM_OF_PLAYERS-1) i=-1;
 
         }
 
@@ -54,7 +54,7 @@ public class Game {
     }
 
     private void printActualGamePoints(){
-        for(int i=0; i<this.NUM_OF_PLAYERS;i++){
+        for(int i=0; i<Game.NUM_OF_PLAYERS;i++){
             System.out.println(this.players[i].getName()+" obtuvo: "+ this.getPointsPerPlayer(i)+" puntos");
         }
     }
