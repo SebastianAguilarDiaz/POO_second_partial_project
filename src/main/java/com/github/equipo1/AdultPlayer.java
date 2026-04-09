@@ -11,7 +11,7 @@ public class AdultPlayer extends Player{
             "Sigue intentando",
             "Quizas la proxima",
             "Estuvo cerca",
-            "Suerte para la Proxima",
+            "Suerte para la proxima",
             "Fallaste esta vez"};
     private  String congratsPhrases[] = {
             "Felicidades",
@@ -33,7 +33,7 @@ public class AdultPlayer extends Player{
         if(this.failedAttempts>1){
             int randomP = random.nextInt(failPhrases.length);
             //Print random fail phrase
-            System.out.println(failPhrases[randomP] + ", " + this.getName() + "...");
+            System.out.println(failPhrases[randomP] + " " + this.getName());
         }
     }
 
