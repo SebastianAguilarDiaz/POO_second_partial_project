@@ -27,8 +27,7 @@ public class CardsGame {
             // depending on the age is the type of player 
             if(age<18)  this.players[i]=new KidPlayer(this.sc,name,age);
             else        this.players[i]=new AdultPlayer(this.sc, name, age);
-
-            
+      
         }
     }
 
@@ -76,11 +75,6 @@ public class CardsGame {
         Game actualGame= new Game(gamePlayers,this.sc);
 
         gamesPlayed++;
-        
-
-
-        
-
 
     }
 
@@ -105,9 +99,6 @@ public class CardsGame {
         this.registerPlayers();
         System.out.println();
         Card.setBackFigure();
-
-
     }
 
-    
 }
