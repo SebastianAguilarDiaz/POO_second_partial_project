@@ -94,8 +94,112 @@ public class Card {
                         if((i>1 && i<6 && j>1 && j<6) && !(i>2 && i<5 && j>2 && j<5)) Card.back[i][j]=randChar;
                         else Card.back[i][j]='0';
                     }
-            }
-            
+                }
+            break;
+                //Diagonal Two squares
+            case 1:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        if((i > 0 && i < 4 && j > 0 && j < 4) || (i > 3 && i < 7 && j > 3 && j < 7)) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //X
+            case 2:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        //(X)  the first and the last empty lines && Make the principal diagonal and the second one
+                        if((i > 0 && i < 7) && (i == j || i + j == 7)) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //cross
+            case 3:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        if(((i > 1 && i < 6) && (j>2 && j<5)) || ((i > 2 && i < 5) && (j>1 && j<6)) ) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //Diagonal 3 squares
+            case 4:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        //the first parentesis makes the first square
+                        //the second parentesis makes the second square
+                        //the third parentesis makes the third square
+
+                        if(((i > 0 && i < 3) && (j > 0 && j < 3)) ||((i > 2 && i < 5) && (j > 2 && j < 5))
+                                || ((i > 4 && i < 7) && (j > 4 && j < 7)) ) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //chessboard
+            case 5:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        if ((i + j) % 2 == 0) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //Letter S (Sebastian)
+            case 6:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+
+                        // char S
+                        if( ((i == 1 || i == 4 || i == 6) && (j > 0 && j < 7)) || ((i == 2 || i == 3) && j == 1) || (i == 5 && j == 6) ) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //Letter Y (Yazhwhan)
+            case 7:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        if( ((i > 0 && i < 4) && (i == j || i + j == 7)) || ((i > 3 && i < 7) && (j == 3 || j == 4)) ) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+            break;
+            //Letter M (Mauricio)
+            case 8:
+                for(int i = 0; i < Card.HEIGHT; i++){
+                    for(int j = 0; j < Card.WIDTH; j++){
+                        if( ((i > 0 && i < 7) && (j == 1 || j == 6)) || ((i > 0 && i < 4) && (i == j || i + j == 7)) ) {
+                            Card.back[i][j] = randChar;
+                        } else {
+                            Card.back[i][j] = '0';
+                        }
+                    }
+                }
+                break;
         }
     }
 
