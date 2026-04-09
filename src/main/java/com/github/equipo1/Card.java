@@ -125,7 +125,7 @@ public class Card {
             case 3:
                 for(int i = 0; i < Card.HEIGHT; i++){
                     for(int j = 0; j < Card.WIDTH; j++){
-                        if(((i > 0 && i < 7) && (j>1 && j<6)) || ((i > 1 && i < 6) && (j>0 && j<7)) ) {
+                        if(((i > 1 && i < 6) && (j>2 && j<5)) || ((i > 2 && i < 5) && (j>1 && j<6)) ) {
                             Card.back[i][j] = randChar;
                         } else {
                             Card.back[i][j] = '0';
