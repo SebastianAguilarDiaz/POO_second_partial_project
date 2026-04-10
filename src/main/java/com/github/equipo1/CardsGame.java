@@ -54,10 +54,11 @@ public class CardsGame {
         this.printPlayersNames();      
         
         System.out.println();
-        System.out.println("Escribe el numero del primer jugador ");
+        System.out.println("Escribe el numero del primer jugador");
         int x=this.sc.nextInt();
         while(!(x>=1 && x<=5)){
-            System.out.println("");
+            System.out.println("Escribe un numero de jugador valido");
+            x=this.sc.nextInt();
         }
         gamePlayers[0]=this.players[x-1];
 
@@ -65,9 +66,15 @@ public class CardsGame {
         int y=this.sc.nextInt();
         
         // if the user tries to select the same player twice
-        while(y==x){
-            System.out.println("Seleccione otro jugador");
-            y=this.sc.nextInt();
+        while(!(y>=1 && y<=5) || y==x){
+            if(!(y>=1 && y<=5)){
+                System.out.println("Escribe un numero de jugador valido");
+                y=this.sc.nextInt();
+            }
+            else {
+                System.out.println("Seleccione otro jugador");
+                y=this.sc.nextInt();
+            }
         }
         System.out.println();
         
