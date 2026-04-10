@@ -23,6 +23,7 @@ public class Turn {
         if (board.compareCards(card1, card2)){
             p.addPoints();
             p.printCongratsPhrase();
+            System.out.println();
             this.succeed=true;
         }
 
@@ -30,6 +31,7 @@ public class Turn {
         // else the cards must return to their previous status an also the board
         else{
             p.printMotivationalPhrase();
+            System.out.println();
             // waits two seconds if the guess is incorrect
             try {
                 TimeUnit.SECONDS.sleep(2);

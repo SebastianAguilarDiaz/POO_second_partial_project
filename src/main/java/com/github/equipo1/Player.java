@@ -17,11 +17,8 @@ public abstract class Player {
         this.setName(n);
 
         this.setAge(a);;
-        
-
-        
+          
         this.points=0;
-
     }
 
 
@@ -47,12 +44,10 @@ public abstract class Player {
 
     // prints the motivational phrase in case that the player failed 
     public void printMotivationalPhrase(){
-
     }
     
     // prints the congrats phrase in case that the player succeeded
     public void printCongratsPhrase(){
-
     }
     
     // returns the points per correct guess
@@ -91,7 +86,6 @@ public abstract class Player {
         System.out.println("┌ Nombre: "+this.getName());
         System.out.println("├ Edad: "+this.getAge());
         System.out.println("├ Puntos: "+this.getPoints());
-        System.out.println("└ Juegos jugados: "+this.getGamesPlayed());
-        
+        System.out.println("└ Juegos jugados: "+this.getGamesPlayed());      
     }
 }

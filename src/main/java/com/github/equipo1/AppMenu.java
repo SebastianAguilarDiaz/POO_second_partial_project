@@ -5,12 +5,12 @@ import java.util.Scanner;
 public class AppMenu {
     public static void main(String[] args) {
         //System.out.println("~~~~~ BIENVENIDO A MEMORAMA ~~~~~");
-        System.out.println(" __  __   _____   __  __   ______   _____    ______   __  __   ______\n" + //
-                        "|  \\/  | |  ___| |  \\/  | |  __  | |  __ \\  |  __  | |  \\/  | |  __  |\n" + //
-                        "| \\  / | | |__   | \\  / | | |  | | | |__) | | |__| | | \\  / | | |__| |\n" + //
-                        "| |\\/| | |  __|  | |\\/| | | |  | | |  _  /  |  __  | | |\\/| | |  __  |\n" + //
-                        "| |  | | | |___  | |  | | | |__| | | | \\ \\  | |  | | | |  | | | |  | |\n" + //
-                        "|_|  |_| |_____| |_|  |_| |______| |_|  \\_\\ |_|  |_| |_|  |_| |_|  |_|\n");
+        System.out.println(" __  __   ______   __  __   ______   _____    ______   __  __   ______\n" + //
+                        "|  \\/  | |  ____| |  \\/  | |  __  | |  __ \\  |  __  | |  \\/  | |  __  |\n" + //
+                        "| \\  / | | |__    | \\  / | | |  | | | |__) | | |__| | | \\  / | | |__| |\n" + //
+                        "| |\\/| | |  __|   | |\\/| | | |  | | |  _  /  |  __  | | |\\/| | |  __  |\n" + //
+                        "| |  | | | |____  | |  | | | |__| | | | \\ \\  | |  | | | |  | | | |  | |\n" + //
+                        "|_|  |_| |______| |_|  |_| |______| |_|  \\_\\ |_|  |_| |_|  |_| |_|  |_|\n");
         
         Scanner sc=new Scanner(System.in);
         CardsGame actualCardsGame=new CardsGame(sc);
@@ -24,11 +24,11 @@ public class AppMenu {
 
             // cleans the buffer
             sc.nextLine();
+            System.out.println();
 
             switch (option) {
                 // end game
                 case 0:
-
                     break;
 
                 // play a game
@@ -51,9 +51,7 @@ public class AppMenu {
             }
 
         }
-        System.out.println();
         actualCardsGame.printPlayersData();
-        System.out.println();
         actualCardsGame.printGamesPlayed();
 
         sc.close();

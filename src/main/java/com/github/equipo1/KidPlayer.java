@@ -27,7 +27,6 @@ public class KidPlayer extends Player{
     }
 
 
-
     // prints the motivational phrase in case that the player failed
     @Override
     public void printMotivationalPhrase(){
@@ -43,6 +42,5 @@ public class KidPlayer extends Player{
         System.out.println("Felicidades " + this.getName() + "! " + congratsPhrases[randomP]);
     
     }
-
 
 }

@@ -46,7 +46,6 @@ public class CardsGame {
     }
 
     public void startAGame(){
-        System.out.println();
         Game.askForTheWords(this.sc);
         Player gamePlayers[]=new Player [2];
         
@@ -92,7 +91,6 @@ public class CardsGame {
 
     public void setCardsFigure(){
         Card.printFiguresList();
-        System.out.println();
 
         System.out.println("≡ Lista de Figuras:");
         System.out.println("┌ 0. Cuadrado");
