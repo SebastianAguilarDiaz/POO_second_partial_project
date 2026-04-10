@@ -47,8 +47,8 @@ public class Game {
     }
 
     private void printWinner(){
-        if     (this.getPointsPerPlayer(0)>this.getPointsPerPlayer(1)) System.out.println("Felicidades has ganado "+this.players[0].getName());
-        else if(this.getPointsPerPlayer(1)>this.getPointsPerPlayer(0)) System.out.println("Felicidades has ganado "+this.players[1].getName());
+        if (this.getPointsPerPlayer(0)>this.getPointsPerPlayer(1)) System.out.println("Felicidades "+this.players[0].getName()+", has ganado");
+        else if(this.getPointsPerPlayer(1)>this.getPointsPerPlayer(0)) System.out.println("Felicidades "+this.players[1].getName()+", has ganado");
         else System.out.println("Ha sido empate");
 
     }
@@ -87,7 +87,7 @@ public class Game {
 
     public static void askForTheWords(Scanner sc){
 
-        System.out.println("Ingresen 5 palabras de 6 letras");
+        System.out.println("* Ingresen 5 palabras de 6 letras:");
 
 
         for(int i=0; i< 5; i++){

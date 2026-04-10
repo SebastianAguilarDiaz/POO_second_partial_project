@@ -88,10 +88,10 @@ public abstract class Player {
 
     // prints the info of the player 
     public void printData(){
-        System.out.println("Nombre: "+this.getName());
-        System.out.println("Edad: "+this.getAge());
-        System.out.println("Puntos: "+this.getPoints());
-        System.out.println("Juegos jugados: "+this.getGamesPlayed());
+        System.out.println("┌ Nombre: "+this.getName());
+        System.out.println("├ Edad: "+this.getAge());
+        System.out.println("├ Puntos: "+this.getPoints());
+        System.out.println("└ Juegos jugados: "+this.getGamesPlayed());
         
     }
 }

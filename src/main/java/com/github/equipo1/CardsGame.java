@@ -46,15 +46,19 @@ public class CardsGame {
     }
 
     public void startAGame(){
-        
+        System.out.println();
         Game.askForTheWords(this.sc);
         Player gamePlayers[]=new Player [2];
         
+        System.out.println();
         this.printPlayersNames();      
         
         System.out.println();
         System.out.println("Escribe el numero del primer jugador ");
         int x=this.sc.nextInt();
+        while(!(x>=1 && x<=5)){
+            System.out.println("");
+        }
         gamePlayers[0]=this.players[x-1];
 
         System.out.println("Escribe el numero del segundo jugador ");
@@ -65,7 +69,8 @@ public class CardsGame {
             System.out.println("Seleccione otro jugador");
             y=this.sc.nextInt();
         }
-
+        System.out.println();
+        
         // cleans the buffer
         sc.nextLine();
 
@@ -82,19 +87,19 @@ public class CardsGame {
         Card.printFiguresList();
         System.out.println();
 
-        System.out.println("Lista de Figuras:");
-        System.out.println("0. Cuadrado");
-        System.out.println("1. Diagonal de 2 cuadros");
-        System.out.println("2. X");
-        System.out.println("3. Cruz");
-        System.out.println("4. Diagonal 3 cuadros");
-        System.out.println("5. Celdas");
-        System.out.println("6. S");
-        System.out.println("7. Y");
-        System.out.println("8. M");
-        System.out.print("Escoja el indice de la figura: ");
-        System.out.println();
+        System.out.println("≡ Lista de Figuras:");
+        System.out.println("┌ 0. Cuadrado");
+        System.out.println("├ 1. Diagonal de 2 cuadros");
+        System.out.println("├ 2. X");
+        System.out.println("├ 3. Cruz");
+        System.out.println("├ 4. Diagonal 3 cuadros");
+        System.out.println("├ 5. Celdas");
+        System.out.println("├ 6. S");
+        System.out.println("├ 7. Y");
+        System.out.println("└ 8. M");
+        System.out.println("≡ Escoja el indice de la figura: ");
         int fig=this.sc.nextInt();
+        System.out.println();
 
         // cleans the buffer
         this.sc.nextLine();

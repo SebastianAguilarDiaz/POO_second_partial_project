@@ -68,7 +68,7 @@ public class Board {
 
      }
 
-    // recieves a numbre from 1 to 10 and returns true if the card is upwards
+    // recieves a number from 1 to 10 and returns true if the card is upwards
     public boolean getCardStatus(int card){
         card--;
         return this.matrix[card/5][card%5].cardUpwards();

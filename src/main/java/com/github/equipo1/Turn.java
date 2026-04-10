@@ -30,7 +30,7 @@ public class Turn {
         // else the cards must return to their previous status an also the board
         else{
             p.printMotivationalPhrase();
-            // waits to seconds if the guess is incorrect
+            // waits two seconds if the guess is incorrect
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
