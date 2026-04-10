@@ -50,6 +50,7 @@ public class AppMenu {
         actualCardsGame.printPlayersData();
         System.out.println();
         actualCardsGame.printGamesPlayed();
+        actualCardsGame.printGrandWinner();
 
         sc.close();
 

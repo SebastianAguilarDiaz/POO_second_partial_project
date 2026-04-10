@@ -119,6 +119,24 @@ public class CardsGame {
 
 
     }
+    public void printGrandWinner() {
+        System.out.println();
+        System.out.println("--- RESULTADO FINAL ---");
 
-    
+        int maxPoints = this.players[0].getPoints();
+
+        for (int i = 1; i < CardsGame.NUM_OF_PLAYERS; i++) {
+            if (this.players[i].getPoints() > maxPoints) {
+                maxPoints = this.players[i].getPoints();
+            }
+        }
+        System.out.println("Ganador o Ganadores:");
+
+        for (int i = 0; i < CardsGame.NUM_OF_PLAYERS; i++) {
+            if (this.players[i].getPoints() == maxPoints) {
+                System.out.println("-> " + this.players[i].getName() + "! - Puntaje total: " + maxPoints + " Victorias: " + this.players[i].getGamesWon());
+            }
+        }
+
+    }
 }

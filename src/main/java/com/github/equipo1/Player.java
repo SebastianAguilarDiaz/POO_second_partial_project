@@ -10,6 +10,7 @@ public abstract class Player {
     private int age;
     private int gamesPlayed=0;
     private int pointsPerCorrectGuess=2;
+    private int gamesWon = 0;
 
 
     public Player(Scanner sc, String n, int a){
@@ -85,6 +86,14 @@ public abstract class Player {
     public int getGamesPlayed(){
         return this.gamesPlayed;
     }
+    //increase number of wins
+    public void addGameWon() {
+        this.gamesWon++;
+    }
+    // returns the games won
+    public int getGamesWon() {
+        return this.gamesWon;
+    }
 
     // prints the info of the player 
     public void printData(){
@@ -92,6 +101,7 @@ public abstract class Player {
         System.out.println("Edad: "+this.getAge());
         System.out.println("Puntos: "+this.getPoints());
         System.out.println("Juegos jugados: "+this.getGamesPlayed());
+        System.out.println("Juegos ganados: " + this.getGamesWon());
         
     }
 }
