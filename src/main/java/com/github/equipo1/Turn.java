@@ -23,21 +23,22 @@ public class Turn {
         if (board.compareCards(card1, card2)){
             p.addPoints();
             p.printCongratsPhrase();
+            System.out.println();
             this.succeed=true;
         }
 
         
-        // else the cards must return to their previous status an also the board
+        // else the cards must return to their previous status as well as the board
         else{
             p.printMotivationalPhrase();
-            // waits to seconds if the guess is incorrect
+            System.out.println();
+            // waits two seconds if the guess is incorrect
             try {
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(p.getWaitTime());;
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            
             
             
             board.flipCard(card1);
@@ -52,19 +53,16 @@ public class Turn {
 
     private int flipCard(Player player){
 
-
-        System.out.println("Jugador "+ player.getName()+ ", selecciona una carta para voltear ");
+        System.out.println(player.getName()+ ", selecciona una carta para voltear ");
         int card=this.sc.nextInt();
         
         // if the card is already upwards
-        while(this.board.getCardStatus(card)){
+        while(!(card>=1 && card<=10) || this.board.getCardStatus(card)){
             System.out.println("Selecciona una carta valida ");
             card=this.sc.nextInt();
             
             // cleans the buffer
             this.sc.nextLine();
-
-
 
         }
         

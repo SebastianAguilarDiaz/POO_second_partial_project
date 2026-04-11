@@ -18,11 +18,8 @@ public abstract class Player {
         this.setName(n);
 
         this.setAge(a);;
-        
-
-        
+          
         this.points=0;
-
     }
 
 
@@ -46,14 +43,17 @@ public abstract class Player {
         return this.name;
     }
 
+    // returns the default wait time after failing
+    public int getWaitTime() {
+        return 4;
+    }
+
     // prints the motivational phrase in case that the player failed 
     public void printMotivationalPhrase(){
-
     }
     
     // prints the congrats phrase in case that the player succeeded
     public void printCongratsPhrase(){
-
     }
     
     // returns the points per correct guess
@@ -71,7 +71,6 @@ public abstract class Player {
         this.points+=this.pointsPerCorrectGuess;
     }
 
-
     // returns the score of the player
     public int getPoints(){
         return this.points;
@@ -86,6 +85,7 @@ public abstract class Player {
     public int getGamesPlayed(){
         return this.gamesPlayed;
     }
+
     //increase number of wins
     public void addGameWon() {
         this.gamesWon++;
@@ -97,11 +97,10 @@ public abstract class Player {
 
     // prints the info of the player 
     public void printData(){
-        System.out.println("Nombre: "+this.getName());
-        System.out.println("Edad: "+this.getAge());
-        System.out.println("Puntos: "+this.getPoints());
-        System.out.println("Juegos jugados: "+this.getGamesPlayed());
-        System.out.println("Juegos ganados: " + this.getGamesWon());
-        
+        System.out.println("┌ Nombre: "+this.getName());
+        System.out.println("├ Edad: "+this.getAge());
+        System.out.println("├ Puntos: "+this.getPoints());
+        System.out.println("├ Juegos jugados: "+this.getGamesPlayed());     
+        System.out.println("└ Juegos ganados: "+this.getGamesWon()); 
     }
 }

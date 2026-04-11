@@ -15,7 +15,7 @@ public class KidPlayer extends Player{
     };
     private  String congratsPhrases[] = {
             "eres super genial! sigue asi y llegaras a ser el mejor en el juego!",
-            "Cada vez que lo logras estoy mas feliz por ti, cuando lo logras estoy mas seguro que puedes lograr todas las metas que te propongas!",
+            "Cada vez que lo logras estoy mas feliz por ti. Cuando lo logras estoy mas seguro de que puedes lograr todas las metas que te propongas!",
             "tienes una memoria realmente asombrosa y envidiable: acabas de encontrar una pareja de cartas! Pusiste muchisima atencion a cada uno de los movimientos en el tablero de juego. Sigue asi para ser el mejor jugador!",
             "Eres la persona mas brillante que he conocido, sigue asi y veras como este juego pronto sera tuyo! Domina la partida!",
             "Lo lograste esta vez! asi que puedes hacerlo otra vez, confia en ti! cada logro es una victoria para tu persona!",
@@ -26,13 +26,17 @@ public class KidPlayer extends Player{
         this.setPointsPerCorrectGuess(4);
     }
 
-
+    // returns the kid's wait time
+    @Override
+    public int getWaitTime() {
+        return 6;
+    }
 
     // prints the motivational phrase in case that the player failed
     @Override
     public void printMotivationalPhrase(){
         int randomP = random.nextInt(failPhrases.length);
-        System.out.println(this.getName() + ", " + failPhrases[randomP]);
+        System.out.println(this.getName() + ", "+failPhrases[randomP]);
     
     }
 
@@ -40,9 +44,8 @@ public class KidPlayer extends Player{
     @Override
     public void printCongratsPhrase(){
         int randomP = random.nextInt(congratsPhrases.length);
-        System.out.println("Felicidades " + this.getName() + "! " + congratsPhrases[randomP]);
+        System.out.println("Felicidades " + this.getName()+"! "+congratsPhrases[randomP]);
     
     }
-
 
 }

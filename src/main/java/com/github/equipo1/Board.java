@@ -24,7 +24,6 @@ public class Board {
         
         createCards();
 
-
     }
 
 
@@ -51,8 +50,6 @@ public class Board {
             System.out.println();
         }
         System.out.println();
-        System.out.println();
-        
     }
 
     // returns the number of cards that are upwards
@@ -68,7 +65,7 @@ public class Board {
 
      }
 
-    // recieves a numbre from 1 to 10 and returns true if the card is upwards
+    // recieves a number from 1 to 10 and returns true if the card is upwards
     public boolean getCardStatus(int card){
         card--;
         return this.matrix[card/5][card%5].cardUpwards();
@@ -84,15 +81,13 @@ public class Board {
         if(this.matrix[num/5][num%5].flip()) this.numOfUpwardsCards++;
         else this.numOfUpwardsCards--;
         
-        
-
-        
 
     }
 
     // clears the screen
     public static void clearScreen(){
-    
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     // creates the matrik of carts based on the words 
@@ -127,11 +122,7 @@ public class Board {
         }
 
 
-
-
-
-
-        
+  
     }
 
 }
