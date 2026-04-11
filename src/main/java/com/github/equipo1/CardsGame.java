@@ -51,12 +51,7 @@ public class CardsGame {
     }
 
     public void startAGame(){
-        // checks if max games reached
-        if(this.gamesPlayed >= CardsGame.MAX_GAMES){
-            System.out.println("! Se ha alcanzado el maximo de "+CardsGame.MAX_GAMES+" partidas.");
-            System.out.println();
-            return;
-        }
+
 
         Game.askForTheWords(this.sc);
         Player gamePlayers[]=new Player [2];
@@ -96,8 +91,12 @@ public class CardsGame {
 
 
         gamePlayers[1]=this.players[y-1];
+        if(this.gamesPlayed<10)
+            this.games[gamesPlayed]=new Game(gamePlayers, this.sc);
 
-        this.games[gamesPlayed]=new Game(gamePlayers, this.sc);
+        else{
+            Game actualGame = new Game (gamePlayers,this.sc);
+        }
 
         gamesPlayed++;
 
@@ -136,7 +135,7 @@ public class CardsGame {
         }
 
         System.out.println("\n<><>< ESTADISTICAS DE PARTIDAS ><><>");
-        for(int i=0; i<this.gamesPlayed; i++){
+        for(int i=0; i<((this.gamesPlayed>10)?10:this.gamesPlayed); i++){
             this.games[i].printGameStats(i+1);
         }
 
@@ -146,7 +145,7 @@ public class CardsGame {
         int maxFailed=0;
 
         // so we can know the max of correct and failed guesses in all the games
-        for(int i=0; i<this.gamesPlayed; i++){
+        for(int i=0; i<((this.gamesPlayed>10)?10:this.gamesPlayed); i++){
             if(this.games[i].getCorrectGuesses() > maxCorrect){
                 maxCorrect=this.games[i].getCorrectGuesses();
             }
@@ -159,7 +158,7 @@ public class CardsGame {
         // prints every game with the max of correct guesses
         System.out.print("\nPartida(s) con mas aciertos ( " + maxCorrect + " ): ");
 
-        for(int i=0; i<this.gamesPlayed; i++){
+        for(int i=0; i<((this.gamesPlayed>10)?10:this.gamesPlayed); i++){
             if(this.games[i].getCorrectGuesses()==maxCorrect){
                 System.out.print((i+1)+", ");
 
@@ -169,13 +168,14 @@ public class CardsGame {
         // prints every game with the max of failed guesses 
         System.out.print("\nPartida(s) con mas fallos ( " + maxFailed + " ) : ");
         
-        for(int i=0; i<this.gamesPlayed; i++){
+        for(int i=0; i<((this.gamesPlayed>10)?10:this.gamesPlayed); i++){
             if(this.games[i].getFailedGuesses()==maxFailed){
                 System.out.print((i+1)+", ");
 
             }
         }
         System.out.println();
+        System.out.println("Nota: Solo se toman en cuenta los primeros 10 juegos para las estadísticas");
 
     }
 
