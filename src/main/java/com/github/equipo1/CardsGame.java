@@ -175,7 +175,7 @@ public class CardsGame {
             }
         }
         System.out.println();
-        System.out.println("Nota: Solo se toman en cuenta los primeros 10 juegos para las estadísticas");
+        System.out.println("Nota: Solo se toman en cuenta los primeros 10 juegos para las estadísticas de partidas");
 
     }
 
