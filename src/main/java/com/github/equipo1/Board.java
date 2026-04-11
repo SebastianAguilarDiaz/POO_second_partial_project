@@ -92,7 +92,8 @@ public class Board {
 
     // clears the screen
     public static void clearScreen(){
-    
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     // creates the matrik of carts based on the words 

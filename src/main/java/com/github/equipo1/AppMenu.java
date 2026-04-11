@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class AppMenu {
     public static void main(String[] args) {
-        //System.out.println("~~~~~ BIENVENIDO A MEMORAMA ~~~~~");
         System.out.println(" __  __   ______   __  __   ______   _____    ______   __  __   ______\n" + //
                         "|  \\/  | |  ____| |  \\/  | |  __  | |  __ \\  |  __  | |  \\/  | |  __  |\n" + //
                         "| \\  / | | |__    | \\  / | | |  | | | |__) | | |__| | | \\  / | | |__| |\n" + //

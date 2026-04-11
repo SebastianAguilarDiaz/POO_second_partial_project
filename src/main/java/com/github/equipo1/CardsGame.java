@@ -11,6 +11,7 @@ public class CardsGame {
 
     CardsGame(Scanner s){
         this.sc=s;
+ 
         this.initialConfig();
     }
     public void registerPlayers(){
