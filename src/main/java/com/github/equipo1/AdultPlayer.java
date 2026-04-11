@@ -23,14 +23,13 @@ public class AdultPlayer extends Player{
     AdultPlayer(Scanner sc, String name, int age){
         super(sc,name,age);
         this.setPointsPerCorrectGuess(2);
-    
     }
 
     @Override
     public void printMotivationalPhrase(){
         this.failedAttempts++;
         
-        if(this.failedAttempts>1){
+        if(this.failedAttempts>=1){
             int randomP = random.nextInt(failPhrases.length);
             //Print random fail phrase
             System.out.println(failPhrases[randomP] + " " + this.getName());
