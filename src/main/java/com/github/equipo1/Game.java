@@ -14,6 +14,9 @@ public class Game {
     private int pointsPerPlayer[]= new int [Game.NUM_OF_PLAYERS];
     private Player players[]=new Player[Game.NUM_OF_PLAYERS];
 
+    private int correctGuesses=0;
+    private int failedGuesses=0;
+
     public Game(Player players[], Scanner s){
         this.sc=s;
 
@@ -25,15 +28,20 @@ public class Game {
             this.pointsPerPlayer[i]=0;
         }
 
-
+        Board.clearScreen();
         board.printBoard();
 
         // it iterates the player and ends only when the number of cards upwards its 10
         for(int i=0; board.getNumOfUpwardsCards()<10;i++){
             Turn actualTurn= new Turn(this.players[i],board,this.sc);
             
-            // if the actual player succed on his turn, it means his guess had been correct
-            if(actualTurn.succeed)this.pointsPerPlayer[i]+=this.players[i].getPointsPerCorrectGuess();
+            // if the actual player succedded on his turn, it means his guess was correct
+            if(actualTurn.succeed){
+                this.pointsPerPlayer[i]+=this.players[i].getPointsPerCorrectGuess();
+                this.correctGuesses++;
+            } else {
+                this.failedGuesses++;
+            }
 
             // so it returns to be 0 after the i++
             if(i==Game.NUM_OF_PLAYERS-1) i=-1;
@@ -42,25 +50,43 @@ public class Game {
 
         this.printEndGame();
 
+    }
 
+    public int getCorrectGuesses(){
+        return this.correctGuesses;
+    }
+
+    public int getFailedGuesses(){
+        return this.failedGuesses;
+    }
+
+    public void printGameStats(int gameNumber){
+        System.out.println("Partida "+gameNumber+":\tAciertos="+this.correctGuesses+"\tFallos="+this.failedGuesses);
     }
 
     private void printWinner(){
-        if (this.getPointsPerPlayer(0)>this.getPointsPerPlayer(1)) System.out.println("Felicidades "+this.players[0].getName()+", has ganado!");
-        else if(this.getPointsPerPlayer(1)>this.getPointsPerPlayer(0)) System.out.println("Felicidades "+this.players[1].getName()+", has ganado!");
-        else System.out.println("Ha sido empate");
-
+    if (this.getPointsPerPlayer(0)>this.getPointsPerPlayer(1)){
+        System.out.println("Felicidades "+this.players[0].getName()+", has ganado la partida!");
+        
+        this.players[0].addGameWon();
     }
+    else if(this.getPointsPerPlayer(1)>this.getPointsPerPlayer(0)){
+        System.out.println("Felicidades "+this.players[1].getName()+", has ganado la partida!");
+        
+        this.players[1].addGameWon();
+    }
+    else System.out.println("Ha sido empate");
+}
 
     private void printActualGamePoints(){
-        System.out.println("* Puntaje de la partida");
+        System.out.println("< Puntaje de la partida >");
         for(int i=0; i<Game.NUM_OF_PLAYERS;i++){
             System.out.println(this.players[i].getName()+" obtuvo: "+ this.getPointsPerPlayer(i)+" puntos");
         }
     }
 
     private void printPlayersData(){
-        System.out.println("<>< Nuevas estadísticas ><>\n");
+        System.out.println("<>< NUEVAS ESTADISTICAS ><>\n");
         for(var n: this.players){
             n.addGamePlayed();
             n.printData();

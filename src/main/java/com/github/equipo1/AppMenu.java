@@ -4,13 +4,12 @@ import java.util.Scanner;
 
 public class AppMenu {
     public static void main(String[] args) {
-        System.out.println(" __  __   ______   __  __   ______   _____    ______   __  __   ______\n" + //
-                        "|  \\/  | |  ____| |  \\/  | |  __  | |  __ \\  |  __  | |  \\/  | |  __  |\n" + //
-                        "| \\  / | | |__    | \\  / | | |  | | | |__) | | |__| | | \\  / | | |__| |\n" + //
-                        "| |\\/| | |  __|   | |\\/| | | |  | | |  _  /  |  __  | | |\\/| | |  __  |\n" + //
-                        "| |  | | | |____  | |  | | | |__| | | | \\ \\  | |  | | | |  | | | |  | |\n" + //
+        System.out.println(" __  __   ______   __  __   ______   _____    ______   __  __   ______\n"+
+                        "|  \\/  | |  ____| |  \\/  | |  __  | |  __ \\  |  __  | |  \\/  | |  __  |\n"+
+                        "| \\  / | | |__    | \\  / | | |  | | | |__) | | |__| | | \\  / | | |__| |\n"+
+                        "| |\\/| | |  __|   | |\\/| | | |  | | |  _  /  |  __  | | |\\/| | |  __  |\n"+
+                        "| |  | | | |____  | |  | | | |__| | | | \\ \\  | |  | | | |  | | | |  | |\n"+
                         "|_|  |_| |______| |_|  |_| |______| |_|  \\_\\ |_|  |_| |_|  |_| |_|  |_|\n");
-        
         Scanner sc=new Scanner(System.in);
         CardsGame actualCardsGame=new CardsGame(sc);
         
@@ -52,6 +51,7 @@ public class AppMenu {
         }
         actualCardsGame.printPlayersData();
         actualCardsGame.printGamesPlayed();
+        actualCardsGame.printGamesStats();
         actualCardsGame.printGrandWinner();
 
         sc.close();

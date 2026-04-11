@@ -31,12 +31,12 @@ public class KidPlayer extends Player{
     public int getWaitTime() {
         return 6;
     }
-    
+
     // prints the motivational phrase in case that the player failed
     @Override
     public void printMotivationalPhrase(){
         int randomP = random.nextInt(failPhrases.length);
-        System.out.println(this.getName() + ", " + failPhrases[randomP]);
+        System.out.println(this.getName() + ", "+failPhrases[randomP]);
     
     }
 
@@ -44,7 +44,7 @@ public class KidPlayer extends Player{
     @Override
     public void printCongratsPhrase(){
         int randomP = random.nextInt(congratsPhrases.length);
-        System.out.println("Felicidades " + this.getName() + "! " + congratsPhrases[randomP]);
+        System.out.println("Felicidades " + this.getName()+"! "+congratsPhrases[randomP]);
     
     }
 

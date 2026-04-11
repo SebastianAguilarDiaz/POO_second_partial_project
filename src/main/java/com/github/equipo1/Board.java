@@ -50,8 +50,6 @@ public class Board {
             System.out.println();
         }
         System.out.println();
-        System.out.println();
-        
     }
 
     // returns the number of cards that are upwards
