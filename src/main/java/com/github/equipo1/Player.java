@@ -43,6 +43,11 @@ public abstract class Player {
         return this.name;
     }
 
+    // returns the default wait time after failing
+    public int getWaitTime() {
+        return 4;
+    }
+
     // prints the motivational phrase in case that the player failed 
     public void printMotivationalPhrase(){
     }
@@ -65,7 +70,6 @@ public abstract class Player {
     public void addPoints(){
         this.points+=this.pointsPerCorrectGuess;
     }
-
 
     // returns the score of the player
     public int getPoints(){

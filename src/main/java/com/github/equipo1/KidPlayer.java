@@ -26,7 +26,12 @@ public class KidPlayer extends Player{
         this.setPointsPerCorrectGuess(4);
     }
 
-
+    // returns the kid's wait time
+    @Override
+    public int getWaitTime() {
+        return 6;
+    }
+    
     // prints the motivational phrase in case that the player failed
     @Override
     public void printMotivationalPhrase(){

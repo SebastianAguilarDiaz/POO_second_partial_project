@@ -34,7 +34,7 @@ public class Turn {
             System.out.println();
             // waits two seconds if the guess is incorrect
             try {
-                TimeUnit.SECONDS.sleep(2);
+                TimeUnit.SECONDS.sleep(p.getWaitTime());;
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
