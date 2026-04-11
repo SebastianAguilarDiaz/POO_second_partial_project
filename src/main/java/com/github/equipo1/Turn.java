@@ -58,7 +58,7 @@ public class Turn {
         int card=this.sc.nextInt();
         
         // if the card is already upwards
-        while(this.board.getCardStatus(card) || !(card>=1&&card<=10)){
+        while(!(card>=1 && card<=10) || this.board.getCardStatus(card)){
             System.out.println("Selecciona una carta valida ");
             card=this.sc.nextInt();
             

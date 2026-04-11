@@ -15,7 +15,7 @@ public class KidPlayer extends Player{
     };
     private  String congratsPhrases[] = {
             "eres super genial! sigue asi y llegaras a ser el mejor en el juego!",
-            "Cada vez que lo logras estoy mas feliz por ti, cuando lo logras estoy mas seguro que puedes lograr todas las metas que te propongas!",
+            "Cada vez que lo logras estoy mas feliz por ti. Cuando lo logras estoy mas seguro de que puedes lograr todas las metas que te propongas!",
             "tienes una memoria realmente asombrosa y envidiable: acabas de encontrar una pareja de cartas! Pusiste muchisima atencion a cada uno de los movimientos en el tablero de juego. Sigue asi para ser el mejor jugador!",
             "Eres la persona mas brillante que he conocido, sigue asi y veras como este juego pronto sera tuyo! Domina la partida!",
             "Lo lograste esta vez! asi que puedes hacerlo otra vez, confia en ti! cada logro es una victoria para tu persona!",
