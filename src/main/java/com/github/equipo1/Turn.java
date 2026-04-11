@@ -28,7 +28,7 @@ public class Turn {
         }
 
         
-        // else the cards must return to their previous status an also the board
+        // else the cards must return to their previous status as well as the board
         else{
             p.printMotivationalPhrase();
             System.out.println();
@@ -39,7 +39,6 @@ public class Turn {
                 e.printStackTrace();
             }
 
-            
             
             
             board.flipCard(card1);
@@ -64,8 +63,6 @@ public class Turn {
             
             // cleans the buffer
             this.sc.nextLine();
-
-
 
         }
         

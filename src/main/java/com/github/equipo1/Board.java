@@ -24,7 +24,6 @@ public class Board {
         
         createCards();
 
-
     }
 
 
@@ -84,9 +83,6 @@ public class Board {
         if(this.matrix[num/5][num%5].flip()) this.numOfUpwardsCards++;
         else this.numOfUpwardsCards--;
         
-        
-
-        
 
     }
 
@@ -128,11 +124,7 @@ public class Board {
         }
 
 
-
-
-
-
-        
+  
     }
 
 }

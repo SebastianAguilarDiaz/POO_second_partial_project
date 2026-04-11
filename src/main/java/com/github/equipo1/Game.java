@@ -25,7 +25,6 @@ public class Game {
             this.pointsPerPlayer[i]=0;
         }
 
-        
 
         board.printBoard();
 

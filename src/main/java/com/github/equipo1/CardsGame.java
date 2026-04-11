@@ -93,8 +93,6 @@ public class CardsGame {
     }
 
     public void setCardsFigure(){
-        Card.printFiguresList();
-
         System.out.println("≡ Lista de Figuras:");
         System.out.println("┌ 0. Cuadrado");
         System.out.println("├ 1. Diagonal de 2 cuadros");
