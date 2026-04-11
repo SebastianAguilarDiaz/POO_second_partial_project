@@ -54,12 +54,11 @@ public class Turn {
 
     private int flipCard(Player player){
 
-
-        System.out.println("Jugador "+ player.getName()+ ", selecciona una carta para voltear ");
+        System.out.println(player.getName()+ ", selecciona una carta para voltear ");
         int card=this.sc.nextInt();
         
         // if the card is already upwards
-        while(this.board.getCardStatus(card)){
+        while(this.board.getCardStatus(card) || !(card>=1&&card<=10)){
             System.out.println("Selecciona una carta valida ");
             card=this.sc.nextInt();
             

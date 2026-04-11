@@ -55,6 +55,8 @@ public class CardsGame {
         System.out.println();
         System.out.println("Escribe el numero del primer jugador");
         int x=this.sc.nextInt();
+
+        // verifies the user enters a valid player number
         while(!(x>=1 && x<=5)){
             System.out.println("Escribe un numero de jugador valido");
             x=this.sc.nextInt();
@@ -64,7 +66,7 @@ public class CardsGame {
         System.out.println("Escribe el numero del segundo jugador ");
         int y=this.sc.nextInt();
         
-        // if the user tries to select the same player twice
+        // if the user tries to select the same player twice or enters and invalid number
         while(!(y>=1 && y<=5) || y==x){
             if(!(y>=1 && y<=5)){
                 System.out.println("Escribe un numero de jugador valido");
@@ -122,4 +124,24 @@ public class CardsGame {
         Card.setBackFigure();
     }
 
+    public void printGrandWinner() {
+        System.out.println();
+        System.out.println("--- RESULTADO FINAL ---");
+
+        int maxPoints = this.players[0].getPoints();
+
+        for (int i = 1; i < CardsGame.NUM_OF_PLAYERS; i++) {
+            if (this.players[i].getPoints() > maxPoints) {
+                maxPoints = this.players[i].getPoints();
+            }
+        }
+        System.out.println("Ganador o Ganadores:");
+
+        for (int i = 0; i < CardsGame.NUM_OF_PLAYERS; i++) {
+            if (this.players[i].getPoints() == maxPoints) {
+                System.out.println("-> " + this.players[i].getName() + "! - Puntaje total: " + maxPoints + " Victorias: " + this.players[i].getGamesWon());
+            }
+        }
+
+    }
 }

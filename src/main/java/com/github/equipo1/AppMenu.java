@@ -53,6 +53,7 @@ public class AppMenu {
         }
         actualCardsGame.printPlayersData();
         actualCardsGame.printGamesPlayed();
+        actualCardsGame.printGrandWinner();
 
         sc.close();
 
@@ -64,7 +65,6 @@ public class AppMenu {
         System.out.println("╠ (1) Jugar partida");
         System.out.println("╠ (2) Ver datos de los jugadores");
         System.out.println("╚ (3) Cambiar figura de las cartas");
-
 
     }
 }

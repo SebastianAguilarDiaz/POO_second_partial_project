@@ -54,13 +54,14 @@ public class Game {
     }
 
     private void printActualGamePoints(){
+        System.out.println("* Puntaje de la partida");
         for(int i=0; i<Game.NUM_OF_PLAYERS;i++){
             System.out.println(this.players[i].getName()+" obtuvo: "+ this.getPointsPerPlayer(i)+" puntos");
         }
     }
 
     private void printPlayersData(){
-        System.out.println("Nuevas estadísticas\n");
+        System.out.println("<>< Nuevas estadísticas ><>\n");
         for(var n: this.players){
             n.addGamePlayed();
             n.printData();
