@@ -15,7 +15,7 @@ public class Card {
     private static char [][] back =new char[HEIGHT][WIDTH];
     
 
-    // word that the card will have asigned
+    // word that the card will have assigned
     private String word;
 
     private boolean cardUpwards=false;
@@ -40,11 +40,11 @@ public class Card {
 
             for(int j=0; j<Card.WIDTH;j++){
                 
-                // if we are a the bottom the character must be the one specified
+                // if we are at the bottom the character must be the one specified
                 if(i==Card.HEIGHT-1)     front[i][j]=Card.FRONT_BOTTOM;
 
 
-                // else if we are on the spaces destinated for the word the characters must the word ones
+                // else if we are on the spaces destined for the word the characters must be the word ones
                 else if(i==3 && j<Card.WIDTH-1 && j>0 )  this.front[i][j]=this.word.charAt(j-1);
 
                 // if neither of the other options were correct it because the character must be the background of the card
@@ -79,10 +79,10 @@ public class Card {
     }
 
     public static void setBackFigure(int fig){
-        // generates a random leter
+        // generates a random letter
         char randChar=(char)(rand.nextInt(26)+0x41);
 
-        // sets the back face of the card depending on the figuer selected
+        // sets the back face of the card depending on the figure selected
         switch(fig){
             
             // square
@@ -96,7 +96,7 @@ public class Card {
                     }
                 }
             break;
-                //Diagonal Two squares
+            // Diagonal Two squares
             case 1:
                 for(int i = 0; i < Card.HEIGHT; i++){
                     for(int j = 0; j < Card.WIDTH; j++){
@@ -108,7 +108,7 @@ public class Card {
                     }
                 }
             break;
-            //X
+            // X
             case 2:
                 for(int i = 0; i < Card.HEIGHT; i++){
                     for(int j = 0; j < Card.WIDTH; j++){
@@ -133,13 +133,13 @@ public class Card {
                     }
                 }
             break;
-            //Diagonal 3 squares
+            // Diagonal 3 squares
             case 4:
                 for(int i = 0; i < Card.HEIGHT; i++){
                     for(int j = 0; j < Card.WIDTH; j++){
-                        //the first parentesis makes the first square
-                        //the second parentesis makes the second square
-                        //the third parentesis makes the third square
+                        // the first parenthesis makes the first square
+                        // the second parenthesis makes the second square
+                        // the third parenthesis makes the third square
 
                         if(((i > 0 && i < 3) && (j > 0 && j < 3)) ||((i > 2 && i < 5) && (j > 2 && j < 5))
                                 || ((i > 4 && i < 7) && (j > 4 && j < 7)) ) {

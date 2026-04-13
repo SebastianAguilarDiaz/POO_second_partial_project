@@ -65,13 +65,13 @@ public class Board {
 
      }
 
-    // recieves a number from 1 to 10 and returns true if the card is upwards
+    // receives a number from 1 to 10 and returns true if the card is upwards
     public boolean getCardStatus(int card){
         card--;
         return this.matrix[card/5][card%5].cardUpwards();
     }
     
-    // recives a number from 1 to 10 and flips that card
+    // receives a number from 1 to 10 and flips that card
     public void flipCard(int num){
         
         num--;
@@ -90,12 +90,12 @@ public class Board {
         System.out.flush();
     }
 
-    // creates the matrik of carts based on the words 
+    // creates the matrix of cards based on the words 
     private void createCards(){
-        // so we cant count how many cards of each word we have
+        // so we can count how many cards of each word we have
         int wordsAdded[]=new int[5];
         
-        // there are 0 cards of each word at the beggining
+        // there are 0 cards of each word at the beginning
         for(int i=0;i<5;i++){
             wordsAdded[i]=0;
         }

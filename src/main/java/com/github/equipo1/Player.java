@@ -86,7 +86,7 @@ public abstract class Player {
         return this.gamesPlayed;
     }
 
-    //increase number of wins
+    // increase number of wins
     public void addGameWon() {
         this.gamesWon++;
     }

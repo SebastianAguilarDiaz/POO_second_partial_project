@@ -31,11 +31,11 @@ public class Game {
         Board.clearScreen();
         board.printBoard();
 
-        // it iterates the player and ends only when the number of cards upwards its 10
+        // it iterates the players and ends only when the number of cards upwards is 10
         for(int i=0; board.getNumOfUpwardsCards()<10;i++){
             Turn actualTurn= new Turn(this.players[i],board,this.sc);
             
-            // if the actual player succedded on his turn, it means his guess was correct
+            // if the actual player succeeded on his turn, it means his guess was correct
             if(actualTurn.succeed){
                 this.pointsPerPlayer[i]+=this.players[i].getPointsPerCorrectGuess();
                 this.correctGuesses++;
@@ -119,7 +119,7 @@ public class Game {
         for(int i=0; i< 5; i++){
             String x=sc.nextLine();
             
-            // if the word hasn't the necesarry length we skip it
+            // if the word doesn't have the necessary length we skip it
             if (x.length()!=6){
                 System.out.println("El tamano de la palabra debe ser 6 letras");
                 i--;

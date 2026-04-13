@@ -19,7 +19,7 @@ public class Turn {
         int card1=this.flipCard(p);
         int card2=this.flipCard(p);
 
-        // if the player succeed the cards must remain upwards and the player must earn some points
+        // if the player succeeds the cards must remain upwards and the player must earn some points
         if (board.compareCards(card1, card2)){
             p.addPoints();
             p.printCongratsPhrase();
